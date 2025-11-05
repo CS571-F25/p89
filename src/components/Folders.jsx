@@ -2,7 +2,9 @@ import React from 'react'
 
 function Folders(props) {
   return (
-    <div>Folders</div>
+    <div>
+         <h1>Manage your folders here!</h1>
+    </div>
   )
 }
 
