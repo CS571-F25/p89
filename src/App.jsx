@@ -1,21 +1,23 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router';
-import Home from './components/Home.jsx';
-import Practice from './components/Practice.jsx';
-import Folders from './components/Folders.jsx';
-import Footer from './components/Navbar.jsx';
+import HomePage from './components/pages/HomePage.jsx';
+import PracticePage from './components/pages/PracticePage.jsx';
+import SetsPage from './components/pages/SetsPage.jsx';
+import BottomNavBar from './components/Navbar.jsx';
+import OpenedSetPage from './components/pages/OpenedSetPage.jsx';
 
 function App() {
 
   return <>
     <BrowserRouter basename='/p89/'>
       <Routes>
-        <Route path='*' element={<Home />} />
-        <Route path='/' element={<Home />} />
-        <Route path='/folders' element={<Folders />} />
-        <Route path='/practice' element={<Practice />} />
+        <Route path='*' element={<HomePage />} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/sets' element={<SetsPage />} />
+        <Route path='/practice' element={<PracticePage />} />
+        <Route path='/sets/:id' element={<OpenedSetPage  />} />
       </Routes>
-      <Footer />
+      <BottomNavBar />
     </BrowserRouter>
   </>
 }

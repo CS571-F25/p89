@@ -1,25 +1,17 @@
 import React from 'react'
 import '../App.css';
-import { useNavigate } from 'react-router';
+import { Link } from 'react-router';
+import { Nav, Navbar, Container } from 'react-bootstrap';
 
-export default function Navbar() {
-    const navigate = useNavigate();
-
-    function handleClick(link) {
-        navigate(`/${link}`);
-    }
+export default function BottomNavBar() {
 
     return (
-        <div className="NavBar">
-            <div style={{ cursor: "pointer"}} onClick={() => handleClick("folders")}> 
-                <p>Folders</p>
-            </div>
-            <div style={{ cursor: "pointer"}} onClick={() => handleClick("")}>
-                <p>Home</p>
-            </div>
-            <div style={{ cursor: "pointer"}} onClick={() => handleClick("practice")}>
-                <p>Practice</p>
-            </div>
-        </div>
+        <Navbar bg="dark" data-bs-theme="dark"  fixed="bottom" className='BottomNavBar'>
+            <Nav className='NavBar'>
+                <Nav.Link as={Link} to={"/sets"}>Sets</Nav.Link>
+                <Nav.Link as={Link} to={"/"}>Home</Nav.Link>
+                <Nav.Link as={Link} to={"/practice"}>Practice</Nav.Link>
+            </Nav>
+        </Navbar>
     )
 }
