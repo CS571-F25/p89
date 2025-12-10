@@ -28,6 +28,7 @@ function PracticePage(props) {
         setFlashcards(shuffled);
         hasShuffled.current = true;
       }
+      console.log(id);
     }}, [id]);
 
   useEffect(() => {

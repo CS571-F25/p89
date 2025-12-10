@@ -20,7 +20,7 @@ function SetsList(props) {
     <div className="justify-content-center"> 
       <Row className="g-3">
         {sets && sets.length > 0 && sets.map(set => {
-          return (<Col key={set.id} xs={12} sm={6} md={4} xl={3}>
+          return (<Col key={set.id} xs={12} sm={7} md={5} xl={3}>
                 <Link to={`/${route}/${set.id}`} className="text-decoration-none">
                   <Card className="set-card shadow border-dark">
                     <div className="front">

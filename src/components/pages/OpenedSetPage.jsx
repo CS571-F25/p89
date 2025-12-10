@@ -56,11 +56,11 @@ function OpenedSetPage(props) {
             <Form onSubmit={createFlashcard}>
                 <Form.Group className="mb-3" controlId="SetName">
                     <Form.Label>Front of Flashcard</Form.Label>
-                    <Form.Control type="text" placeholder="Enter set name" ref={frontRef}/>
+                    <Form.Control type="text" placeholder="Enter front of flashcard" ref={frontRef}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="SetName">
                     <Form.Label>Back of Flashcard</Form.Label>
-                    <Form.Control type="text" placeholder="Enter set name" ref={backRef}/>
+                    <Form.Control type="text" placeholder="Enter back of flashcard" ref={backRef}/>
                 </Form.Group>
             </Form>
             <Button variant='dark' onClick={createFlashcard}>Add Flashcard</Button>

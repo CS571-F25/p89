@@ -21,7 +21,7 @@ function FlashcardList(props) {
         <div className="justify-content-center"> 
         <Row className="g-3">
             {flashcards && flashcards.length > 0 && flashcards.map(flashcard => {
-            return (<Col key={flashcard.front} xs={12} sm={6} md={4} xl={3}>
+            return (<Col key={flashcard.front} xs={12} sm={7} md={5} xl={3}>
                     <Flashcard flashcard={flashcard} flipCard={flipCard} deleteFlashcard={deleteFlashcard}/>
                 </Col>)
             })}
