@@ -1,4 +1,5 @@
 import { Card, Col, Row } from 'react-bootstrap';
+import Flashcard from './Flashcard';
 
 function FlashcardList(props) {
     const flashcards = props.flashcards;
@@ -10,22 +11,18 @@ function FlashcardList(props) {
         props.setFlashcards(updatedFlashcards);
     }
 
+    function deleteFlashcard(flashcard) {
+        const updatedFlashcards = flashcards.filter(fc => fc !== flashcard);
+        props.setFlashcards(updatedFlashcards);
+        alert("Flashcard deleted!");
+    }
+
     return (
         <div className="justify-content-center"> 
         <Row className="g-3">
             {flashcards && flashcards.length > 0 && flashcards.map(flashcard => {
             return (<Col key={flashcard.front} xs={12} sm={6} md={4} xl={3}>
-                    <Card className={`set-card border-dark flashcard ${flashcard.flipped ? 'flipped' : ''}`} onClick={() => flipCard(flashcard)}>
-                        {!flashcard.flipped ? (
-                            <div className="front">
-                                <h2 className="set-title">{flashcard.front}</h2>
-                            </div>
-                        ) : (
-                            <div className="back">
-                                <h2 className="set-title">{flashcard.back}</h2>
-                            </div>
-                        )}
-                    </Card>
+                    <Flashcard flashcard={flashcard} flipCard={flipCard} deleteFlashcard={deleteFlashcard}/>
                 </Col>)
             })}
         </Row>

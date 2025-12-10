@@ -20,10 +20,10 @@ function SetsPage(props) {
 				 <br></br>
 				 {sets.length === 0 && <>
 					<h2>You have no sets. Create one!</h2>
-					<Button href="/p89/">Go Create Set!</Button>
+					<Button variant='dark' href="/p89/">Go Create Set!</Button>
 				 </>
 				 }
-				 <SetsList sets={sets}/>
+				 <SetsList sets={sets} setSets={setSets}/>
 		</div>
 	)
 }

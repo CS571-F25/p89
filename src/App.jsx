@@ -11,11 +11,12 @@ function App() {
   return <>
     <BrowserRouter basename='/p89/'>
       <Routes>
-        <Route path='*' element={<HomePage />} />
+        <Route path='*' element={<h2>404 Page Not Found</h2>} />
         <Route path='/' element={<HomePage />} />
         <Route path='/sets' element={<SetsPage />} />
-        <Route path='/practice' element={<PracticePage />} />
         <Route path='/sets/:id' element={<OpenedSetPage  />} />
+        <Route path='/practice' element={<PracticePage />} />
+        <Route path='/practice/:id' element={<PracticePage />} />
       </Routes>
       <BottomNavBar />
     </BrowserRouter>

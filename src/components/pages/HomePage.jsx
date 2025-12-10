@@ -45,16 +45,12 @@ function HomePage(props) {
                     <Form.Control type="text" placeholder="Enter set name" ref={nameRef}/>
                 </Form.Group>
             </Form>
-            <Button variant="primary" type="submit" onClick={createSet} style={{ marginBottom: "20px" }}>
-                Create Set
-            </Button>
+            <Button variant='dark' type="submit" onClick={createSet} style={{ marginBottom: "20px" }}>Create Set</Button>
             
-            <Button variant="primary" type="submit" onClick={clearSets}>
-                Clear Sets
-            </Button>
+            <Button variant='dark' type="submit" onClick={clearSets}>Clear Sets</Button>
         </div>
         <h2>Click on a set to add to it!</h2>
-        <SetsList sets={sets} />
+        <SetsList sets={sets} setSets={setSets} route={"sets"}/>
     </>
   )
 }

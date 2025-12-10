@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Button, Form, } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { useParams, Link } from 'react-router';
 import FlashcardList from '../FlashcardList';
 
 function OpenedSetPage(props) {
@@ -51,20 +51,21 @@ function OpenedSetPage(props) {
     return (
         <div>
             <div className="container">
-                <h1>Set: {curSet.name}</h1>
-            <h2>Flashcards:</h2>
+                <h1 style={{ fontSize: "60px", fontWeight: "bold" }}>Set: {curSet.name}</h1>
 
             <Form onSubmit={createFlashcard}>
                 <Form.Group className="mb-3" controlId="SetName">
-                    <Form.Label>Set Name</Form.Label>
+                    <Form.Label>Front of Flashcard</Form.Label>
                     <Form.Control type="text" placeholder="Enter set name" ref={frontRef}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="SetName">
-                    <Form.Label>Set Name</Form.Label>
+                    <Form.Label>Back of Flashcard</Form.Label>
                     <Form.Control type="text" placeholder="Enter set name" ref={backRef}/>
                 </Form.Group>
             </Form>
-            <Button variant="primary" onClick={createFlashcard} styles={{marginBottom: "20px"}}>Add Flashcard</Button>
+            <Button variant='dark' onClick={createFlashcard}>Add Flashcard</Button>
+            <h3 style={{ marginTop: "30px" }}>Done Adding Flashcards? Go practice here!</h3>
+            <Button variant='dark' as={Link} to={`../practice/${id}`} style={{ marginBottom: "15px" }}>Practice Set</Button>
             </div>
             <h2>Click on a flashcard to flip it!</h2>
             <FlashcardList flashcards={flashcards} setFlashcards={setFlashcards} />
