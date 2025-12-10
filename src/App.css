@@ -90,12 +90,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: scale(1.6);
+  max-width: 100%;
+  overflow: hidden;
+  padding:40px;
+}
+
+.flashcard-container .flashcard{
+  width: 467px;
+  height: 240px;
+}
+.flashcard-container .set-title {
+  font-size: 38.4px;
 }
 
 .practice-container {
-  margin-top: 100px;
-  margin-bottom: 75px;
+  margin-bottom: 15px;
 }
 
 .button-container {
